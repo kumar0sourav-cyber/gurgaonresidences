@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Westin Residences Gurugram | Private NRI Showcase</title>
+  <meta name="description" content="Private NRI showcase for Westin Residences Gurugram in Seattle and San Jose. Explore branded living, wellness-led residences, location, amenities and event registration." />
+  <meta property="og:title" content="Westin Residences Gurugram | Private NRI Showcase" />
+  <meta property="og:description" content="Private U.S. showcase for premium Gurugram branded residences. Seattle 30–31 May and San Jose 6–7 June." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://www.youtube.com" />
+  <link rel="preconnect" href="https://i.ytimg.com" />
+  <style>
+    :root {
+      --green: #18372f;
+      --green-deep: #102821;
+      --green-soft: #22453c;
+      --gold: #b89362;
+      --gold-soft: #d7bc92;
+      --ivory: #f5efe7;
+      --cream: #f7f1e8;
+      --paper: #fbf8f3;
+      --ink: #1f1b17;
+      --muted: #61574f;
+      --line: #dccdb8;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--ivory);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    h1, h2, h3, .serif { font-family: Georgia, Cambria, "Times New Roman", serif; font-weight: 400; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .eyebrow { color: var(--gold-soft); letter-spacing: .32em; text-transform: uppercase; font-size: 11px; font-weight: 700; }
+    .eyebrow.dark { color: #8a6b45; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 14px 26px; font-weight: 700; font-size: 14px; cursor: pointer; border: 0; transition: transform .2s ease, opacity .2s ease, background .2s ease; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--green); color: white; box-shadow: 0 16px 36px rgba(0,0,0,.12); }
+    .btn-gold { background: var(--gold); color: white; box-shadow: 0 16px 36px rgba(0,0,0,.12); }
+    .btn-outline-light { border: 1px solid rgba(255,255,255,.55); background: rgba(255,255,255,.10); color: white; backdrop-filter: blur(10px); }
+    .btn-outline-dark { border: 1px solid var(--green); color: var(--green); background: transparent; }
+    .grid { display: grid; gap: 24px; }
+    .two-col { grid-template-columns: 1.02fr .98fr; align-items: center; }
+    .two-col-balanced { grid-template-columns: 1fr 1fr; align-items: center; }
+    .hero { position: relative; min-height: 100vh; background: var(--green); color: white; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(9,22,18,.10) 0%, rgba(16,40,33,.36) 42%, rgba(24,55,47,.96) 100%); }
+    .hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at top right, rgba(184,147,98,.18), transparent 28%); }
+    .hero-inner { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; padding: 30px 0 56px; }
+    .nav { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.10); padding-bottom: 18px; }
+    .brand-title { margin: 8px 0 0; font-family: Georgia, serif; font-size: 21px; }
+    .nav-cta { border: 1px solid rgba(255,255,255,.30); background: rgba(255,255,255,.10); padding: 10px 18px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .hero-content { flex: 1; display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: 48px; padding: 48px 0 12px; }
+    .hero h1 { margin: 18px 0 0; font-size: clamp(54px, 7.4vw, 94px); line-height: .96; letter-spacing: -0.04em; }
+    .hero h1 span { color: #f2e8d9; display: block; }
+    .divider { height: 1px; background: rgba(255,255,255,.55); width: min(720px, 100%); margin: 24px 0 0; }
+    .hero-lead { color: #f0e5d4; font-size: clamp(20px, 2.1vw, 26px); line-height: 1.55; max-width: 760px; margin: 28px 0 0; }
+    .hero-sub { color: #ddd3ca; line-height: 1.8; max-width: 760px; margin-top: 18px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+    .video-card { border: 1px solid rgba(255,255,255,.10); background: rgba(0,0,0,.20); border-radius: 34px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.28); backdrop-filter: blur(12px); }
+    .video-wrap { aspect-ratio: 16 / 10; background: var(--green-deep); }
+    .video-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .hero-event-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 20px; background: rgba(23,53,45,.95); border-top: 1px solid rgba(255,255,255,.10); }
+    .mini-event { border: 1px solid rgba(255,255,255,.10); background: rgba(35,69,60,.85); border-radius: 22px; padding: 20px; }
+    .mini-event h3 { font-size: 28px; margin: 12px 0 0; }
+    .mini-event p { color: #d7cdc0; font-size: 14px; line-height: 1.55; margin: 10px 0 0; }
+    .side-tab { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); writing-mode: vertical-rl; background: rgba(48,82,72,.90); padding: 18px 10px; border-radius: 4px; font-size: 12px; letter-spacing: .32em; text-transform: uppercase; font-weight: 700; z-index: 2; }
+
+    .floating-highlights { position: relative; z-index: 2; margin-top: -38px; }
+    .highlight-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; background: rgba(255,255,255,.96); border: 1px solid var(--line); border-radius: 30px; padding: 18px; box-shadow: 0 20px 60px rgba(0,0,0,.08); }
+    .highlight-card { background: var(--paper); border: 1px solid #e7dccd; border-radius: 22px; padding: 18px; font-weight: 600; color: #5c534c; line-height: 1.55; }
+
+    section.section { padding: 88px 0; }
+    .panel-green { background: var(--green); color: white; border-radius: 34px; padding: 42px; min-height: 410px; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.12); }
+    .panel-green::before { content:""; position:absolute; inset:0; background: radial-gradient(circle at top right, rgba(184,147,98,.15), transparent 32%); }
+    .panel-green > * { position: relative; z-index: 1; }
+    .panel-green h2, .section-title { font-size: clamp(40px, 5vw, 58px); line-height: 1.05; margin: 16px 0 0; }
+    .panel-green p { color: #e1d7ca; line-height: 1.8; margin: 22px 0 0; }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .stat { background: var(--paper); border: 1px solid var(--line); border-radius: 24px; padding: 24px; }
+    .stat .label { color: #9a7f59; letter-spacing: .24em; text-transform: uppercase; font-size: 11px; font-weight: 800; }
+    .stat .value { font-family: Georgia, serif; font-size: 26px; line-height: 1.15; margin-top: 14px; }
+
+    .green-band { background: #16362d; color: white; position: relative; overflow: hidden; }
+    .green-band::before { content:""; position:absolute; inset:0; background: radial-gradient(circle at top right, rgba(184,147,98,.14), transparent 30%); }
+    .green-band .container { position: relative; z-index: 1; }
+    .chapter-card { border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.06); border-radius: 32px; padding: 40px; backdrop-filter: blur(8px); }
+    .chapter-card.light { background: white; border-color: #dfd1be; color: var(--ink); box-shadow: 0 14px 40px rgba(0,0,0,.04); }
+    .chapter-card h2 { font-size: clamp(38px, 4vw, 54px); line-height: 1.08; margin: 16px 0 0; }
+    .chapter-copy { font-size: 16px; line-height: 1.9; color: #ddd3ca; }
+    .chapter-copy.dark { color: var(--muted); }
+
+    .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .feature-card { border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.06); border-radius: 24px; padding: 22px; color: #f1e7d7; line-height: 1.6; font-weight: 600; }
+    .wellness-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .wellness-card { border: 1px solid var(--line); background: rgba(255,255,255,.9); border-radius: 24px; padding: 28px 16px; text-align: center; font-family: Georgia, serif; font-size: 26px; }
+
+    .events { background: var(--cream); }
+    .section-head { max-width: 760px; margin-bottom: 46px; }
+    .section-head h2 { font-size: clamp(42px, 5vw, 62px); line-height: 1.06; margin: 16px 0 0; }
+    .section-head p { color: var(--muted); line-height: 1.85; margin-top: 18px; }
+    .event-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .event-card { background: white; border: 1px solid var(--line); border-radius: 32px; padding: 34px; box-shadow: 0 12px 40px rgba(0,0,0,.04); }
+    .event-card h3 { font-size: 34px; margin: 16px 0 0; }
+    .event-card .details { color: var(--muted); line-height: 1.8; margin: 22px 0 0; }
+    .event-card .details strong { color: #2a241e; }
+
+    .register { background: #efe4d5; }
+    .form-box { background: rgba(255,255,255,.92); border: 1px solid var(--line); border-radius: 34px; padding: 30px; box-shadow: 0 25px 70px rgba(72,54,31,.09); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    input, select, textarea { width: 100%; border: 1px solid #d8cab6; background: #fbf8f3; border-radius: 18px; padding: 14px 16px; color: #4d453f; outline: none; }
+    textarea { min-height: 124px; resize: vertical; }
+    .full { grid-column: 1 / -1; }
+    .form-note { color: #8d8176; font-size: 12px; line-height: 1.6; }
+
+    .faq { background: #f8f2e8; border-top: 1px solid #d8cab6; border-bottom: 1px solid #d8cab6; }
+    .faq-list { display: grid; gap: 14px; }
+    .faq-card { background: rgba(255,255,255,.82); border: 1px solid #d8cab6; border-radius: 24px; padding: 24px; }
+    .faq-card h3 { font-family: Inter, sans-serif; font-weight: 800; margin: 0; font-size: 18px; }
+    .faq-card p { color: var(--muted); line-height: 1.7; margin: 12px 0 0; font-size: 14px; }
+
+    footer { background: var(--green); color: white; }
+    .footer-main { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 48px 0; }
+    .footer-main h2 { font-size: 34px; margin: 0; }
+    .footer-main p { color: #ddd3ca; line-height: 1.7; }
+    .legal { border-top: 1px solid rgba(255,255,255,.10); color: #c9c0b5; font-size: 12px; line-height: 1.7; padding: 22px 0; }
+
+    .modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,.62); z-index: 50; padding: 20px; }
+    .modal.open { display: flex; }
+    .modal-card { width: min(680px, 100%); max-height: 92vh; overflow-y: auto; background: #f8f2e8; border: 1px solid #d8cab6; border-radius: 32px; padding: 30px; box-shadow: 0 30px 90px rgba(0,0,0,.28); }
+    .modal-top { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; }
+    .close { border: 1px solid #d8cab6; background: transparent; border-radius: 999px; padding: 9px 14px; color: var(--muted); cursor: pointer; }
+    .unlock-success { display: none; background: white; border: 1px solid #d8cab6; border-radius: 24px; padding: 22px; margin-top: 22px; }
+    .unlock-success.show { display: block; }
+    .gate-form.hide { display: none; }
+
+    @media (max-width: 900px) {
+      .hero-content, .two-col, .two-col-balanced { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 56px; }
+      .hero-event-strip, .highlight-grid, .event-cards, .form-grid, .footer-main { grid-template-columns: 1fr; }
+      .highlight-grid, .stats-grid, .feature-grid, .wellness-grid { grid-template-columns: 1fr; }
+      .side-tab { display: none; }
+      .footer-main { display: grid; }
+    }
+
+    @media (max-width: 560px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .hero h1 { font-size: 46px; }
+      .section-title, .panel-green h2, .section-head h2, .chapter-card h2 { font-size: 36px; }
+      .panel-green, .chapter-card, .form-box, .event-card, .modal-card { border-radius: 24px; padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <nav class="nav">
+          <div>
+            <div class="eyebrow">Private NRI Showcase</div>
+            <p class="brand-title">Westin Residences Gurugram</p>
+          </div>
+          <a class="nav-cta" href="#register">Register Interest</a>
+        </nav>
+
+        <div class="hero-content">
+          <div>
+            <div class="eyebrow">A Dynamic New Era</div>
+            <h1>A Life And <span>Legacy For Tomorrow</span></h1>
+            <div class="divider"></div>
+            <p class="hero-lead">Explore India’s finest hospitality branded residences through a private U.S. showcase for buyers evaluating premium Gurugram real estate.</p>
+            <p class="hero-sub">A curated conversation around branded living, wellness, master-planned design, location advantage, and long-term ownership relevance for global Indians.</p>
+            <div class="hero-actions">
+              <button class="btn btn-outline-light" onclick="openGate()">Download Brochure</button>
+              <a class="btn btn-primary" href="#events">Explore Event Dates</a>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-wrap">
+              <iframe src="https://www.youtube.com/embed/fh08gM709Lo?autoplay=0&mute=1&controls=1&modestbranding=1&rel=0" title="Westin Residences Gurugram lifestyle film" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="hero-event-strip">
+              <div class="mini-event">
+                <div class="eyebrow">Seattle</div>
+                <h3>30–31 May</h3>
+                <p>InterContinental Seattle Bellevue by IHG</p>
+              </div>
+              <div class="mini-event">
+                <div class="eyebrow">San Jose</div>
+                <h3>6–7 June</h3>
+                <p>The Domain Hotel Sunnyvale</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a class="side-tab" href="#register">Enquiry Now</a>
+      </div>
+    </section>
+
+    <section class="floating-highlights">
+      <div class="container">
+        <div class="highlight-grid">
+          <div class="highlight-card">World’s largest Westin Residences proposition</div>
+          <div class="highlight-card">Sector 103, Dwarka Expressway, Gurugram</div>
+          <div class="highlight-card">3 & 4 bedroom residences within approx. 20 acres</div>
+          <div class="highlight-card">World-class amenities centered around wellness</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid two-col">
+        <div class="panel-green">
+          <div class="eyebrow">Project Overview</div>
+          <h2>The world’s largest Westin Residences</h2>
+          <p>An urban sanctuary of resort-style living, planned within approximately 20 acres of lush landscape and designed around biophilic principles, wellness, and architectural innovation.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat"><div class="label">Residences</div><div class="value">3 & 4 bedroom homes</div></div>
+          <div class="stat"><div class="label">Location</div><div class="value">Sector 103, Dwarka Expressway</div></div>
+          <div class="stat"><div class="label">Landscape</div><div class="value">Approx. 20 acres</div></div>
+          <div class="stat"><div class="label">Experience</div><div class="value">Resort-style living everyday</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section green-band">
+      <div class="container grid two-col-balanced">
+        <div class="chapter-card">
+          <div class="eyebrow">Masterplan & Location</div>
+          <h2>The epicentre of India’s future of commerce, community and connection</h2>
+        </div>
+        <p class="chapter-copy">Located at Sector 103 on Dwarka Expressway, the development is positioned for connectivity across Delhi and Gurugram, with nearby access to key business, airport and civic infrastructure corridors.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid two-col-balanced">
+        <p class="chapter-copy dark">The masterplan emphasizes life without compromise: zero vehicle movement at ground level, elevated towers on approximately 20 to 30-foot-high stilts, dedicated activity tracks, and panoramic views of landscaped central areas.</p>
+        <div class="chapter-card light">
+          <div class="eyebrow dark">Life Without Compromise</div>
+          <h2>The world at your reach</h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="section green-band">
+      <div class="container grid two-col">
+        <div>
+          <div class="eyebrow">Project Highlights</div>
+          <h2 class="section-title">Elevated living, defined</h2>
+          <p class="chapter-copy" style="margin-top:18px;">From thoughtful masterplanning to wellness-led amenities and hospitality-led service, the project is positioned around a more refined residential lifestyle.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card">70% of the site dedicated to green, open spaces</div>
+          <div class="feature-card">Zero ground-level vehicular movement for safety and serenity</div>
+          <div class="feature-card">Approx. 1.75 lakh sq. ft. clubhouse lifestyle experience</div>
+          <div class="feature-card">Dedicated walking, jogging and cycling pathways</div>
+          <div class="feature-card">Personalized services through a dedicated concierge team</div>
+          <div class="feature-card">ONVIA residence owner recognition platform benefits</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid two-col">
+        <div class="chapter-card light">
+          <div class="eyebrow dark">The Westin Difference</div>
+          <h2>Six pillars of well-being</h2>
+          <p class="chapter-copy dark">The well-being philosophy becomes the emotional center of the experience, feeding body, mind, spirit, and soul through design, service, and lifestyle choices.</p>
+        </div>
+        <div class="wellness-grid">
+          <div class="wellness-card">Sleep Well</div>
+          <div class="wellness-card">Eat Well</div>
+          <div class="wellness-card">Move Well</div>
+          <div class="wellness-card">Feel Well</div>
+          <div class="wellness-card">Work Well</div>
+          <div class="wellness-card">Play Well</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" class="section events">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow dark">Meet us in the U.S.</div>
+          <h2>Private access in Seattle and San Jose</h2>
+          <p>Two cities. Limited slots. A more premium introduction for buyers who want a serious, structured conversation rather than a casual browse.</p>
+        </div>
+        <div class="event-cards">
+          <div class="event-card">
+            <div class="eyebrow dark">Seattle</div>
+            <h3>30–31 May 2026</h3>
+            <div class="details">
+              <p><strong>Venue:</strong> InterContinental Seattle Bellevue by IHG</p>
+              <p><strong>Address:</strong> 850 Ave Sq NE, Bellevue, WA 98004, United States</p>
+              <p>Curated showcase sessions and one-to-one consultations.</p>
+            </div>
+            <a href="#register" class="btn btn-primary" style="margin-top:22px;">Reserve Seattle Access</a>
+          </div>
+          <div class="event-card">
+            <div class="eyebrow dark">San Jose</div>
+            <h3>6–7 June 2026</h3>
+            <div class="details">
+              <p><strong>Venue:</strong> The Domain Hotel Sunnyvale</p>
+              <p><strong>Address:</strong> 1085 E El Camino Real, Sunnyvale, CA 94087, US</p>
+              <p>Curated showcase sessions and one-to-one consultations.</p>
+            </div>
+            <a href="#register" class="btn btn-primary" style="margin-top:22px;">Reserve San Jose Access</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="register" class="section register">
+      <div class="container grid two-col">
+        <div>
+          <div class="eyebrow dark">Register your interest</div>
+          <h2 class="section-title">Request a private invitation</h2>
+          <p class="chapter-copy dark" style="margin-top:20px;">Share your details to book a consultation slot or unlock the project brochure. This form can later be connected to Tally, HubSpot, Webflow Forms, Google Sheets, Make, or Zapier.</p>
+          <button class="btn btn-outline-dark" onclick="openGate()" style="margin-top:28px;">Unlock Brochure</button>
+        </div>
+        <div class="form-box">
+          <form onsubmit="submitInvite(event)">
+            <div class="form-grid">
+              <input required name="name" placeholder="Full name" />
+              <input required name="phone" placeholder="Mobile / WhatsApp" />
+              <input required class="full" type="email" name="email" placeholder="Email address" />
+              <select name="city"><option>Select city</option><option>Seattle</option><option>San Jose</option><option>Other</option></select>
+              <select name="budget"><option>Budget range</option><option>₹5–7 Cr</option><option>₹7–10 Cr</option><option>₹10 Cr+</option></select>
+              <select name="intent"><option>Intent</option><option>Investment</option><option>Self-use</option><option>Both</option></select>
+              <select name="date"><option>Preferred date</option><option>Seattle — 30 May</option><option>Seattle — 31 May</option><option>San Jose — 6 June</option><option>San Jose — 7 June</option></select>
+              <textarea class="full" name="message" placeholder="What would you most like to understand during the session?"></textarea>
+              <button class="btn btn-primary full" type="submit">Request Invitation</button>
+              <p class="form-note full">By submitting, you agree to be contacted regarding the event and related project information.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq">
+      <div class="container grid two-col">
+        <div>
+          <div class="eyebrow dark">Frequently asked questions</div>
+          <h2 class="section-title">The final layer of clarity</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-card"><h3>Who is this private showcase designed for?</h3><p>Buyers evaluating premium Gurugram real estate, especially those exploring branded living, future family ownership, or long-term India exposure.</p></div>
+          <div class="faq-card"><h3>Is this a public seminar?</h3><p>No. It is structured as a curated showcase with limited registrations and one-to-one consultation opportunities.</p></div>
+          <div class="faq-card"><h3>What will be discussed during the session?</h3><p>Project positioning, location context, lifestyle proposition, indicative price band, and whether a deeper follow-up makes sense.</p></div>
+          <div class="faq-card"><h3>Can I request a dedicated slot?</h3><p>Yes. You can specify your preferred city and timing in the registration form.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-main">
+      <div>
+        <h2>Prefer a direct conversation first?</h2>
+        <p>Reach out for a private conversation or continue through the event registration flow.</p>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:12px;">
+        <a class="btn btn-gold" href="#register">Register Now</a>
+        <a class="btn btn-outline-light" href="https://wa.me/919035096660?text=Hi%20Sourav%2C%20I%20would%20like%20to%20know%20more%20about%20the%20Westin%20Residences%20Gurugram%20NRI%20showcase.">WhatsApp Now</a>
+      </div>
+    </div>
+    <div class="container legal">
+      This is an independent event registration page created for outreach and lead-generation purposes. Project names and associated marks belong to their respective owners. Please refer to official project sources for the most current information. Project information is indicative and subject to confirmation from official documentation and sales representatives.
+    </div>
+  </footer>
+
+  <div class="modal" id="brochureModal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-top">
+        <div>
+          <div class="eyebrow dark">Gated Brochure Access</div>
+          <h2 style="font-size:34px; margin:12px 0 0;">Unlock the brochure</h2>
+          <p class="chapter-copy dark" style="margin-top:12px;">Share your details to access the brochure covering project overview, location and masterplan, highlights, floor plans, specifications, and consultants.</p>
+        </div>
+        <button class="close" onclick="closeGate()">Close</button>
+      </div>
+
+      <form id="gateForm" class="gate-form" onsubmit="unlockBrochure(event)" style="margin-top:22px;">
+        <div class="form-grid">
+          <input required name="name" placeholder="Full name" />
+          <input required name="phone" placeholder="Mobile / WhatsApp" />
+          <input required class="full" type="email" name="email" placeholder="Email address" />
+          <select name="city"><option>Seattle</option><option>San Jose</option><option>Other</option></select>
+          <select name="budget"><option>₹5–7 Cr</option><option>₹7–10 Cr</option><option>₹10 Cr+</option></select>
+          <button class="btn btn-primary full" type="submit">Unlock Brochure</button>
+          <p class="form-note full">For production, connect this form to your CRM before revealing the brochure link.</p>
+        </div>
+      </form>
+
+      <div class="unlock-success" id="unlockSuccess">
+        <p class="chapter-copy dark" style="margin:0;">Thank you. Your brochure access is unlocked.</p>
+        <a class="btn btn-primary" style="width:100%; margin-top:16px;" href="./westin-brochure.pdf" target="_blank" rel="noopener">Open Brochure PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openGate() {
+      document.getElementById('brochureModal').classList.add('open');
+      document.getElementById('brochureModal').setAttribute('aria-hidden', 'false');
+    }
+    function closeGate() {
+      document.getElementById('brochureModal').classList.remove('open');
+      document.getElementById('brochureModal').setAttribute('aria-hidden', 'true');
+    }
+    function unlockBrochure(event) {
+      event.preventDefault();
+      document.getElementById('gateForm').classList.add('hide');
+      document.getElementById('unlockSuccess').classList.add('show');
+    }
+    function submitInvite(event) {
+      event.preventDefault();
+      alert('Thank you. Your interest has been captured. Please connect this form to Tally, HubSpot, Google Sheets, Make, Zapier, or Netlify Forms for production lead capture.');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeGate();
+    });
+  </script>
+</body>
+</html>
