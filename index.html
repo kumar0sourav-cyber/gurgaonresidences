@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Westin Residences Gurugram | Private NRI Showcase</title>
@@ -11,6 +10,7 @@
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://www.youtube.com" />
   <link rel="preconnect" href="https://i.ytimg.com" />
+
   <style>
     :root {
       --green: #18372f;
@@ -25,6 +25,10 @@
       --muted: #61574f;
       --line: #dccdb8;
       --white: #ffffff;
+      --success-bg: #eef6f1;
+      --success-text: #1f5a43;
+      --error-bg: #fff2f2;
+      --error-text: #9a2a2a;
     }
 
     * { box-sizing: border-box; }
@@ -41,8 +45,13 @@
     .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
     .eyebrow { color: var(--gold-soft); letter-spacing: .32em; text-transform: uppercase; font-size: 11px; font-weight: 700; }
     .eyebrow.dark { color: #8a6b45; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 14px 26px; font-weight: 700; font-size: 14px; cursor: pointer; border: 0; transition: transform .2s ease, opacity .2s ease, background .2s ease; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 999px; padding: 14px 26px; font-weight: 700; font-size: 14px;
+      cursor: pointer; border: 0; transition: transform .2s ease, opacity .2s ease, background .2s ease;
+    }
     .btn:hover { transform: translateY(-1px); }
+    .btn:disabled { opacity: .7; cursor: not-allowed; transform: none; }
     .btn-primary { background: var(--green); color: white; box-shadow: 0 16px 36px rgba(0,0,0,.12); }
     .btn-gold { background: var(--gold); color: white; box-shadow: 0 16px 36px rgba(0,0,0,.12); }
     .btn-outline-light { border: 1px solid rgba(255,255,255,.55); background: rgba(255,255,255,.10); color: white; backdrop-filter: blur(10px); }
@@ -115,10 +124,29 @@
     .register { background: #efe4d5; }
     .form-box { background: rgba(255,255,255,.92); border: 1px solid var(--line); border-radius: 34px; padding: 30px; box-shadow: 0 25px 70px rgba(72,54,31,.09); }
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    input, select, textarea { width: 100%; border: 1px solid #d8cab6; background: #fbf8f3; border-radius: 18px; padding: 14px 16px; color: #4d453f; outline: none; }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid #d8cab6;
+      background: #fbf8f3;
+      border-radius: 18px;
+      padding: 14px 16px;
+      color: #4d453f;
+      outline: none;
+    }
     textarea { min-height: 124px; resize: vertical; }
     .full { grid-column: 1 / -1; }
     .form-note { color: #8d8176; font-size: 12px; line-height: 1.6; }
+    .form-message {
+      display: none;
+      border-radius: 18px;
+      padding: 16px 18px;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .form-message.show { display: block; }
+    .form-message.success { background: var(--success-bg); color: var(--success-text); border: 1px solid #c8e4d5; }
+    .form-message.error { background: var(--error-bg); color: var(--error-text); border: 1px solid #f0c7c7; }
 
     .faq { background: #f8f2e8; border-top: 1px solid #d8cab6; border-bottom: 1px solid #d8cab6; }
     .faq-list { display: grid; gap: 14px; }
@@ -139,7 +167,6 @@
     .close { border: 1px solid #d8cab6; background: transparent; border-radius: 999px; padding: 9px 14px; color: var(--muted); cursor: pointer; }
     .unlock-success { display: none; background: white; border: 1px solid #d8cab6; border-radius: 24px; padding: 22px; margin-top: 22px; }
     .unlock-success.show { display: block; }
-    .gate-form.hide { display: none; }
 
     @media (max-width: 900px) {
       .hero-content, .two-col, .two-col-balanced { grid-template-columns: 1fr; }
@@ -157,24 +184,32 @@
       .panel-green, .chapter-card, .form-box, .event-card, .modal-card { border-radius: 24px; padding: 24px; }
     }
   </style>
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5CMJ3DDW');</script>
-<!-- End Google Tag Manager -->
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-659LD0KHC6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-659LD0KHC6');
-</script>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5CMJ3DDW');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Keep this only if GA4 is NOT already configured inside GTM -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-659LD0KHC6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-659LD0KHC6');
+  </script>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CMJ3DDW" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
   <main>
     <section class="hero">
       <div class="container hero-inner">
@@ -194,7 +229,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <p class="hero-lead">Explore India’s finest hospitality branded residences through a private U.S. showcase for buyers evaluating premium Gurugram real estate.</p>
             <p class="hero-sub">A curated conversation around branded living, wellness, master-planned design, location advantage, and long-term ownership relevance for global Indians.</p>
             <div class="hero-actions">
-              <button class="btn btn-outline-light" onclick="openGate()">Download Brochure</button>
+              <button class="btn btn-outline-light" type="button" onclick="openGate()">Download Brochure</button>
               <a class="btn btn-primary" href="#events">Explore Event Dates</a>
             </div>
           </div>
@@ -342,86 +377,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div>
           <div class="eyebrow dark">Register your interest</div>
           <h2 class="section-title">Request a private invitation</h2>
-          <p class="chapter-copy dark" style="margin-top:20px;">Share your details to book a consultation slot or unlock the project brochure. This form can later be connected to Tally, HubSpot, Webflow Forms, Google Sheets, Make, or Zapier.</p>
-          <button class="btn btn-outline-dark" onclick="openGate()" style="margin-top:28px;">Unlock Brochure</button>
+          <p class="chapter-copy dark" style="margin-top:20px;">Share your details to book a consultation slot or unlock the project brochure.</p>
+          <button class="btn btn-outline-dark" type="button" onclick="openGate()" style="margin-top:28px;">Unlock Brochure</button>
         </div>
-        
+
         <div class="form-box">
-          <div data-fs-success id="inviteSuccess" style="display:none;" class="faq-card">
-            Thank you for registering your interest. Our team will reach out shortly to confirm your preferred showcase slot or private consultation.
-          </div>
-          <div data-fs-error id="inviteError" style="display:none;" class="faq-card"></div>
+          <div id="inviteSuccess" class="form-message success">Thank you for registering your interest. Our team will reach out shortly to confirm your preferred showcase slot or private consultation.</div>
+          <div id="inviteError" class="form-message error">Something went wrong. Please try again or continue on WhatsApp.</div>
 
-          <form id="westin-form" class="space-y-4">
+          <form id="inviteForm" action="https://formspree.io/f/mvzlbgjb" method="POST">
             <div class="form-grid">
-              <div>
-                <input
-                  type="text"
-                  name="full_name"
-                  placeholder="Full name"
-                  required
-                  data-fs-field
-                />
-                <span data-fs-error="full_name" class="form-note"></span>
-              </div>
-              <div>
-                <input
-                  type="tel"
-                  name="whatsapp"
-                  placeholder="Mobile / WhatsApp"
-                  required
-                  data-fs-field
-                />
-                <span data-fs-error="whatsapp" class="form-note"></span>
-              </div>
-
-              <div class="full">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email address"
-                  required
-                  data-fs-field
-                />
-                <span data-fs-error="email" class="form-note"></span>
-              </div>
-
-              <div>
-                <select name="interest_type" required data-fs-field>
-                  <option value="">What best describes your interest?</option>
-                  <option>Investment</option>
-                  <option>Self-use</option>
-                  <option>Exploring both</option>
-                </select>
-                <span data-fs-error="interest_type" class="form-note"></span>
-              </div>
-
-              <div>
-                <select name="preferred_option" required data-fs-field>
-                  <option value="">Which option would you prefer?</option>
-                  <option>Seattle — 30 May</option>
-                  <option>Seattle — 31 May</option>
-                  <option>San Jose — 6 June</option>
-                  <option>San Jose — 7 June</option>
-                  <option>Private consultation instead</option>
-                </select>
-                <span data-fs-error="preferred_option" class="form-note"></span>
-              </div>
-
-              <div class="full">
-                <select name="budget_range" data-fs-field>
-                  <option value="">Which price range are you comfortable exploring?</option>
-                  <option>₹5–7 Cr</option>
-                  <option>₹7–10 Cr</option>
-                  <option>₹10 Cr+</option>
-                  <option>Prefer to discuss privately</option>
-                </select>
-                <span data-fs-error="budget_range" class="form-note"></span>
-              </div>
-
+              <input required name="full_name" placeholder="Full name" />
+              <input required name="whatsapp" placeholder="Mobile / WhatsApp" />
+              <input required class="full" type="email" name="email" placeholder="Email address" />
+              <select name="interest_type" required>
+                <option value="">What best describes your interest?</option>
+                <option>Investment</option>
+                <option>Self-use</option>
+                <option>Exploring both</option>
+              </select>
+              <select name="preferred_option" required>
+                <option value="">Which option would you prefer?</option>
+                <option>Seattle — 30 May</option>
+                <option>Seattle — 31 May</option>
+                <option>San Jose — 6 June</option>
+                <option>San Jose — 7 June</option>
+                <option>Private consultation instead</option>
+              </select>
+              <select class="full" name="budget_range">
+                <option value="">Which price range are you comfortable exploring?</option>
+                <option>₹5–7 Cr</option>
+                <option>₹7–10 Cr</option>
+                <option>₹10 Cr+</option>
+                <option>Prefer to discuss privately</option>
+              </select>
               <input type="hidden" name="_subject" value="New Westin Residences Gurugram lead" />
-
-              <button class="btn btn-primary full" type="submit" data-fs-submit-btn>Request Invitation</button>
+              <button id="inviteSubmit" class="btn btn-primary full" type="submit">Request Invitation</button>
               <p class="form-note full">By submitting, you agree to be contacted regarding the event and related project information.</p>
             </div>
           </form>
@@ -469,20 +460,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <h2 style="font-size:34px; margin:12px 0 0;">Unlock the brochure</h2>
           <p class="chapter-copy dark" style="margin-top:12px;">Share your details to access the brochure covering project overview, location and masterplan, highlights, floor plans, specifications, and consultants.</p>
         </div>
-        <button class="close" onclick="closeGate()">Close</button>
+        <button class="close" type="button" onclick="closeGate()">Close</button>
       </div>
 
-      
-      <form id="gateForm" class="gate-form" action="https://formspree.io/f/mvzlbgjb" method="POST" style="margin-top:22px;">
+      <div id="gateError" class="form-message error">Something went wrong. Please try again.</div>
+
+      <form id="gateForm" action="https://formspree.io/f/mvzlbgjb" method="POST" style="margin-top:22px;">
         <div class="form-grid">
           <input required name="full_name" placeholder="Full name" />
           <input required name="whatsapp" placeholder="Mobile / WhatsApp" />
           <input required class="full" type="email" name="email" placeholder="Email address" />
-          <select name="city"><option>Seattle</option><option>San Jose</option><option>Other</option></select>
-          <select name="budget_range"><option>₹5–7 Cr</option><option>₹7–10 Cr</option><option>₹10 Cr+</option><option>Prefer to discuss privately</option></select>
-          <input type="hidden" name="_subject" value="Brochure unlock request - Westin Residences Gurugram" />
-          <button class="btn btn-primary full" type="submit">Unlock Brochure</button>
-          <p class="form-note full">After submission, the brochure opens below for immediate access.</p>
+          <select name="city">
+            <option>Seattle</option>
+            <option>San Jose</option>
+            <option>Other</option>
+          </select>
+          <select name="budget_range">
+            <option>₹5–7 Cr</option>
+            <option>₹7–10 Cr</option>
+            <option>₹10 Cr+</option>
+            <option>Prefer to discuss privately</option>
+          </select>
+          <input type="hidden" name="_subject" value="Brochure unlock request — Westin Residences Gurugram" />
+          <button id="gateSubmit" class="btn btn-primary full" type="submit">Unlock Brochure</button>
+          <p class="form-note full">After successful submission, the brochure opens below immediately.</p>
         </div>
       </form>
 
@@ -493,59 +494,76 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
   </div>
 
-  
   <script>
+    const brochureModal = document.getElementById('brochureModal');
+    const inviteForm = document.getElementById('inviteForm');
+    const gateForm = document.getElementById('gateForm');
+    const inviteSuccess = document.getElementById('inviteSuccess');
+    const inviteError = document.getElementById('inviteError');
+    const gateError = document.getElementById('gateError');
+    const unlockSuccess = document.getElementById('unlockSuccess');
+    const inviteSubmit = document.getElementById('inviteSubmit');
+    const gateSubmit = document.getElementById('gateSubmit');
+
     function openGate() {
-      document.getElementById('brochureModal').classList.add('open');
-      document.getElementById('brochureModal').setAttribute('aria-hidden', 'false');
+      brochureModal.classList.add('open');
+      brochureModal.setAttribute('aria-hidden', 'false');
+      gateError.classList.remove('show');
     }
+
     function closeGate() {
-      document.getElementById('brochureModal').classList.remove('open');
-      document.getElementById('brochureModal').setAttribute('aria-hidden', 'true');
+      brochureModal.classList.remove('open');
+      brochureModal.setAttribute('aria-hidden', 'true');
     }
-    function unlockBrochure(event) {
+
+    async function submitForm(form, successBox, errorBox, submitButton, onSuccess) {
+      errorBox.classList.remove('show');
+      if (successBox) successBox.classList.remove('show');
+
+      const originalText = submitButton.textContent;
+      submitButton.disabled = true;
+      submitButton.textContent = 'Please wait...';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          form.reset();
+          if (successBox) successBox.classList.add('show');
+          if (typeof onSuccess === 'function') onSuccess();
+        } else {
+          errorBox.classList.add('show');
+        }
+      } catch (error) {
+        errorBox.classList.add('show');
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+      }
+    }
+
+    inviteForm.addEventListener('submit', function (event) {
       event.preventDefault();
-      const form = document.getElementById('gateForm');
-      const data = new FormData(form);
-      fetch('https://formspree.io/f/mvzlbgjb', {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      }).then(() => {
-        document.getElementById('gateForm').classList.add('hide');
-        document.getElementById('unlockSuccess').classList.add('show');
-      }).catch(() => {
-        document.getElementById('gateForm').classList.add('hide');
-        document.getElementById('unlockSuccess').classList.add('show');
+      submitForm(inviteForm, inviteSuccess, inviteError, inviteSubmit);
+    });
+
+    gateForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      submitForm(gateForm, null, gateError, gateSubmit, function () {
+        gateForm.style.display = 'none';
+        unlockSuccess.classList.add('show');
       });
-    }
-    document.getElementById('gateForm').addEventListener('submit', unlockBrochure);
+    });
 
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeGate();
     });
-
-    window.formspree = window.formspree || function () {
-      (formspree.q = formspree.q || []).push(arguments);
-    };
-    formspree('initForm', { formElement: '#westin-form', formId: 'mvzlbgjb' });
-
-    document.addEventListener('DOMContentLoaded', function() {
-      const success = document.querySelector('[data-fs-success]');
-      const error = document.querySelector('[data-fs-error]');
-      const observer = new MutationObserver(() => {
-        if (success && success.textContent.trim()) success.style.display = 'block';
-        if (error && error.textContent.trim()) error.style.display = 'block';
-      });
-      if (success) observer.observe(success, { childList: true, subtree: true });
-      if (error) observer.observe(error, { childList: true, subtree: true });
-    });
   </script>
-  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
-
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CMJ3DDW"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 </body>
 </html>
