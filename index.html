@@ -345,18 +345,83 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <p class="chapter-copy dark" style="margin-top:20px;">Share your details to book a consultation slot or unlock the project brochure. This form can later be connected to Tally, HubSpot, Webflow Forms, Google Sheets, Make, or Zapier.</p>
           <button class="btn btn-outline-dark" onclick="openGate()" style="margin-top:28px;">Unlock Brochure</button>
         </div>
+        
         <div class="form-box">
-          <form onsubmit="submitInvite(event)">
+          <div data-fs-success id="inviteSuccess" style="display:none;" class="faq-card">
+            Thank you for registering your interest. Our team will reach out shortly to confirm your preferred showcase slot or private consultation.
+          </div>
+          <div data-fs-error id="inviteError" style="display:none;" class="faq-card"></div>
+
+          <form id="westin-form" class="space-y-4">
             <div class="form-grid">
-              <input required name="name" placeholder="Full name" />
-              <input required name="phone" placeholder="Mobile / WhatsApp" />
-              <input required class="full" type="email" name="email" placeholder="Email address" />
-              <select name="city"><option>Select city</option><option>Seattle</option><option>San Jose</option><option>Other</option></select>
-              <select name="budget"><option>Budget range</option><option>₹5–7 Cr</option><option>₹7–10 Cr</option><option>₹10 Cr+</option></select>
-              <select name="intent"><option>Intent</option><option>Investment</option><option>Self-use</option><option>Both</option></select>
-              <select name="date"><option>Preferred date</option><option>Seattle — 30 May</option><option>Seattle — 31 May</option><option>San Jose — 6 June</option><option>San Jose — 7 June</option></select>
-              <textarea class="full" name="message" placeholder="What would you most like to understand during the session?"></textarea>
-              <button class="btn btn-primary full" type="submit">Request Invitation</button>
+              <div>
+                <input
+                  type="text"
+                  name="full_name"
+                  placeholder="Full name"
+                  required
+                  data-fs-field
+                />
+                <span data-fs-error="full_name" class="form-note"></span>
+              </div>
+              <div>
+                <input
+                  type="tel"
+                  name="whatsapp"
+                  placeholder="Mobile / WhatsApp"
+                  required
+                  data-fs-field
+                />
+                <span data-fs-error="whatsapp" class="form-note"></span>
+              </div>
+
+              <div class="full">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email address"
+                  required
+                  data-fs-field
+                />
+                <span data-fs-error="email" class="form-note"></span>
+              </div>
+
+              <div>
+                <select name="interest_type" required data-fs-field>
+                  <option value="">What best describes your interest?</option>
+                  <option>Investment</option>
+                  <option>Self-use</option>
+                  <option>Exploring both</option>
+                </select>
+                <span data-fs-error="interest_type" class="form-note"></span>
+              </div>
+
+              <div>
+                <select name="preferred_option" required data-fs-field>
+                  <option value="">Which option would you prefer?</option>
+                  <option>Seattle — 30 May</option>
+                  <option>Seattle — 31 May</option>
+                  <option>San Jose — 6 June</option>
+                  <option>San Jose — 7 June</option>
+                  <option>Private consultation instead</option>
+                </select>
+                <span data-fs-error="preferred_option" class="form-note"></span>
+              </div>
+
+              <div class="full">
+                <select name="budget_range" data-fs-field>
+                  <option value="">Which price range are you comfortable exploring?</option>
+                  <option>₹5–7 Cr</option>
+                  <option>₹7–10 Cr</option>
+                  <option>₹10 Cr+</option>
+                  <option>Prefer to discuss privately</option>
+                </select>
+                <span data-fs-error="budget_range" class="form-note"></span>
+              </div>
+
+              <input type="hidden" name="_subject" value="New Westin Residences Gurugram lead" />
+
+              <button class="btn btn-primary full" type="submit" data-fs-submit-btn>Request Invitation</button>
               <p class="form-note full">By submitting, you agree to be contacted regarding the event and related project information.</p>
             </div>
           </form>
@@ -407,15 +472,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <button class="close" onclick="closeGate()">Close</button>
       </div>
 
-      <form id="gateForm" class="gate-form" onsubmit="unlockBrochure(event)" style="margin-top:22px;">
+      
+      <form id="gateForm" class="gate-form" action="https://formspree.io/f/mvzlbgjb" method="POST" style="margin-top:22px;">
         <div class="form-grid">
-          <input required name="name" placeholder="Full name" />
-          <input required name="phone" placeholder="Mobile / WhatsApp" />
+          <input required name="full_name" placeholder="Full name" />
+          <input required name="whatsapp" placeholder="Mobile / WhatsApp" />
           <input required class="full" type="email" name="email" placeholder="Email address" />
           <select name="city"><option>Seattle</option><option>San Jose</option><option>Other</option></select>
-          <select name="budget"><option>₹5–7 Cr</option><option>₹7–10 Cr</option><option>₹10 Cr+</option></select>
+          <select name="budget_range"><option>₹5–7 Cr</option><option>₹7–10 Cr</option><option>₹10 Cr+</option><option>Prefer to discuss privately</option></select>
+          <input type="hidden" name="_subject" value="Brochure unlock request - Westin Residences Gurugram" />
           <button class="btn btn-primary full" type="submit">Unlock Brochure</button>
-          <p class="form-note full">For production, connect this form to your CRM before revealing the brochure link.</p>
+          <p class="form-note full">After submission, the brochure opens below for immediate access.</p>
         </div>
       </form>
 
@@ -426,6 +493,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
   </div>
 
+  
   <script>
     function openGate() {
       document.getElementById('brochureModal').classList.add('open');
@@ -437,17 +505,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     function unlockBrochure(event) {
       event.preventDefault();
-      document.getElementById('gateForm').classList.add('hide');
-      document.getElementById('unlockSuccess').classList.add('show');
+      const form = document.getElementById('gateForm');
+      const data = new FormData(form);
+      fetch('https://formspree.io/f/mvzlbgjb', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(() => {
+        document.getElementById('gateForm').classList.add('hide');
+        document.getElementById('unlockSuccess').classList.add('show');
+      }).catch(() => {
+        document.getElementById('gateForm').classList.add('hide');
+        document.getElementById('unlockSuccess').classList.add('show');
+      });
     }
-    function submitInvite(event) {
-      event.preventDefault();
-      alert('Thank you. Your interest has been captured. Please connect this form to Tally, HubSpot, Google Sheets, Make, Zapier, or Netlify Forms for production lead capture.');
-    }
+    document.getElementById('gateForm').addEventListener('submit', unlockBrochure);
+
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeGate();
     });
+
+    window.formspree = window.formspree || function () {
+      (formspree.q = formspree.q || []).push(arguments);
+    };
+    formspree('initForm', { formElement: '#westin-form', formId: 'mvzlbgjb' });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const success = document.querySelector('[data-fs-success]');
+      const error = document.querySelector('[data-fs-error]');
+      const observer = new MutationObserver(() => {
+        if (success && success.textContent.trim()) success.style.display = 'block';
+        if (error && error.textContent.trim()) error.style.display = 'block';
+      });
+      if (success) observer.observe(success, { childList: true, subtree: true });
+      if (error) observer.observe(error, { childList: true, subtree: true });
+    });
   </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CMJ3DDW"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
